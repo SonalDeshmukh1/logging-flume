@@ -18,8 +18,7 @@ name: build
 on:
   push:
     branches:
-      - trunk
-      - build-dev
+      - logging-flume
   pull_request:
 
 jobs:
@@ -29,7 +28,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [ ubuntu-latest, macos-latest ]
+        os: [ self-hosted ]
 
     steps:
 
@@ -37,13 +36,13 @@ jobs:
         uses: actions/checkout@v2
 
       # JDK 8 is needed for the build, and it is the primary bytecode target.
-      - name: Setup JDK 8
+      - name: Setup JDK 19.0.2+7
         uses: actions/setup-java@v2.3.0
         with:
           distribution: temurin
-          java-version: 8
+          java-version: 19.0.2+7
           java-package: jdk
-          architecture: x64
+          architecture: s390x
           cache: maven
 
       - name: Inspect environment (Linux)
