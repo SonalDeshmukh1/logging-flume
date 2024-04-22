@@ -18,7 +18,8 @@ name: build
 on:
   push:
     branches:
-      - logging-flume
+      - logging-fume
+      - build-dev
   pull_request:
 
 jobs:
