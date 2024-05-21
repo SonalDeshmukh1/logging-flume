@@ -42,7 +42,7 @@ jobs:
         with:
           distribution: adopt
           java-version: 8
-          java-package: jdk
+          java-package: openjdk
           architecture: x64
           cache: maven
 
